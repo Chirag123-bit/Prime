@@ -14,3 +14,64 @@ To view Collections:
 insertMany:
 
 db.users.insertMany([{name:"Pratap", age:21, address:"Kathmandu"},{name:"Rujesh", age:32, address:"Bhaktapur"},{name:"Saman", age:25, address:"Chitwan"},{name:"Rajesh", age:29, address:"Dhading"},{name:"Suman", age:48, address:"Lumla"},{name:"Manish", age:88, address:"Dhading"}])
+
+
+To Find all users with name "Pratap"
+db.users.find({name:"Pratap"})
+
+
+To get count of all users in document
+db.users.find().count()
+
+
+
+db.users.updateOne({name:"Manish", address:"Dhading"},{$set:{age:50}})
+
+
+
+Finding document
+	db.collection_name.find()
+
+
+Find one row
+	db.collection_name.find({key:"value"})
+
+Sort rows
+	db.collection_name.find().sort({key:1}) //1 for ascending, -1 for descending
+
+Count Rows
+	db.collection_name.find().count()
+
+Limit rows
+	db.collection_name.find().limit(2)
+
+
+Combining Conditions (and, or)
+	
+	db.users.find($and:[{name:"Chirag"},{age:33}])
+
+
+Comparision Operators (gte, lte, ne)
+	db.users.find({age:{$gte:25}})
+
+
+
+Update one document (set, unset, rename)
+	db.collection_name.update({"field":"to_be_searched"}, {$set:{"field":"to_be_changed"}})
+
+
+Upserta a document
+	db.collection_name.update({"field":"to_be_searched"}, {$set:{"field":"to_be_changed"}}, {upsert:true})
+
+
+
+Increment Operator $inc
+
+db.users.updateMany({},{$inc:{age:2}}) //increases age of all users by 2
+
+
+Rename Operator $rename
+	db.users.updateMany({name:"Roshan1"},{$rename:{age:"ageNumber"}})    
+
+Delete Row remove
+	db.users.deleteOne({name:"Chirag"})

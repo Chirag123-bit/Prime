@@ -1,0 +1,16 @@
+To Select a database: 
+	use database_name
+
+To View Current Database:
+	DB
+
+TO create a collection:
+	db.createCollection("Collection Name")
+
+To view Collections:
+	show collections
+
+
+insertMany:
+
+db.users.insertMany([{name:"Pratap", age:21, address:"Kathmandu"},{name:"Rujesh", age:32, address:"Bhaktapur"},{name:"Saman", age:25, address:"Chitwan"},{name:"Rajesh", age:29, address:"Dhading"},{name:"Suman", age:48, address:"Lumla"},{name:"Manish", age:88, address:"Dhading"}])

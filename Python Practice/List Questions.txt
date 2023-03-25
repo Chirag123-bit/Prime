@@ -1,0 +1,9 @@
+1) Python program to interchange first and last elements in a list
+2) Python program to swap two elements in a list
+3) Reversing the list
+4) Occurence of a element in list
+5) Find Second largest element in list
+6) Print only odd numbers from a numbers list
+7) Print unique items in a list
+8) Find an element in list (Linear and Lograthmitic method)
+9) Remove Multiple Occurence of elements from list

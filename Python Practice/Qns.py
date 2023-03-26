@@ -23,12 +23,48 @@ arr = [10,26,83,14,85]
 
 # print(reversed_array)
 
-lst = [1,2,3,4,5,6]
-start = 0
-end = len(lst)-1
+# lst = [1,2,3,4,5,6]
+# start = 0
+# end = len(lst)-1
 
-while end>start:
-    lst[start], lst[end] = lst[end], lst[start]
-    start +=1
-    end -=1
-print(lst)
+# while end>start:
+#     lst[start], lst[end] = lst[end], lst[start]
+#     start +=1
+#     end -=1
+# print(lst)
+
+
+# Occurence of a element in list
+
+# arr = ["a","a", "a", "b", "b","a", "e", "e","e"]
+# occs = {}
+# for i in arr:
+#     if(i in occs):
+#         occs[i] +=1
+#     else:
+#         occs[i] = 1
+# print(occs)
+
+
+# Find largest element in list
+
+arr = [10,32,878787,3434,5454,767676,878786,5534324]
+arr2 = [10,11,2312,3412,3213,1241,24]
+
+
+def secLargest(arr):
+    largest = -1
+    sec_largest = -1
+    for i in arr:
+        if(i>sec_largest):
+            sec_largest = i
+        if(sec_largest>largest):
+            largest, sec_largest = sec_largest, largest
+
+    print(sec_largest)
+
+
+
+secLargest(arr)
+
+secLargest(arr2)

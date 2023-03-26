@@ -5,5 +5,4 @@
 5) Find Second largest element in list
 6) Print only odd numbers from a numbers list
 7) Print unique items in a list
-8) Find an element in list (Linear and Lograthmitic method)
-9) Remove Multiple Occurence of elements from list
+8) Find an element in list (Linear and Binary method)

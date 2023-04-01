@@ -1,0 +1,178 @@
+Create Database
+Use Database
+Create Table
+Constraints
+Select
+Where
+And, OR, Not
+In
+Between, Not Between
+Order By, Distinct
+Limit, Offset(For Skipping)
+Count, SUM, AVG, MIN, MAX
+Group By
+update tableName set col=val where ...
+Alter Table rename(for table) to newTableName, rename column colName to newColName
+Delete from tableName where .....
+
+CONSTRAINT fk_transactions FOREIGN KEY(customer_id) REFERENCES customers(customer_id)
+
+
+
+
+
+CREATE DATABASE Prime;
+use prime;
+CREATE TABLE students (
+    student_id INT NOT NULL AUTO_INCREMENT,
+    fname VARCHAR(50) NOT NULL,
+    lname VARCHAR(50) NOT NULL,
+    age INT NOT NULL,
+    address VARCHAR(100) NOT NULL,
+    CONSTRAINT pk_students PRIMARY KEY (student_id)
+);
+
+
+INSERT INTO students(fname,lname, age, address) 
+	VALUES("Chirag", "Simkhada", 30, "Kathmandu"), ("Ram", "Prashad", 55, "Pokhara"),
+    ("Eliot", "Johnson", 40, "California"),("Jim", "Scott", 32, "New York"),
+    ("Ross", "Geller", 66, "Missipi"),("Michal", "Scott", 21, "Bhaktapur"),
+    ("Jim", "Pearson", 18, "Toronto"),("Lisa", "Kudrow", 15, "Kathmandu");
+    
+    
+
+
+SELECT 
+    *
+FROM
+    students;
+    
+    
+SELECT 
+    count(*) as Total
+FROM
+    students
+WHERE
+    age > 30;
+    
+    
+SELECT 
+    *
+FROM
+    students
+LIMIT 6 OFFSET 2;
+
+
+
+SELECT 
+    *
+FROM
+    students
+WHERE
+    age >= 20 AND address = 'Kathmandu';
+
+
+SELECT 
+    *
+FROM
+    students
+WHERE
+    age = 15 OR age = 21 OR age = 25
+        OR age = 47
+        OR age = 53
+        OR age = 72
+;
+
+
+SELECT 
+    *
+FROM
+    students
+WHERE
+    age IN (15 , 21, 35, 47, 53, 72);
+    
+    
+-- select students whose age lies between 15 to 30 --  
+
+SELECT 
+    *
+FROM
+    students
+WHERE
+    age >= 15 AND age <= 30;
+    
+    
+SELECT 
+    *
+FROM
+    students
+WHERE
+    age NOT BETWEEN 15 AND 30;
+    
+    
+    
+SELECT 
+    *
+FROM
+    students
+ORDER BY fname desc;
+
+
+
+SELECT DISTINCT
+    address, COUNT(*) as Count
+FROM
+    students
+GROUP BY address;
+    
+    
+SELECT 
+    fname, lname, address
+FROM
+    students;
+    
+    
+SELECT 
+    *
+FROM
+    students
+WHERE
+    age = (SELECT 
+            MAX(age)
+        FROM
+            students);
+   
+
+
+
+
+
+UPDATE students 
+SET 
+    age = 100,
+    address="Nepal"
+WHERE
+    student_id = 1;
+    
+SELECT 
+    *
+FROM
+    students;
+
+
+ALter table students rename column address to location;
+
+
+alter table students rename users;
+    
+    
+    
+DELETE FROM users 
+WHERE
+    student_id = 5;
+
+
+SELECT 
+    *
+FROM
+    users;

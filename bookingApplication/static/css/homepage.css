@@ -1,0 +1,13 @@
+#hero {
+
+    height: 100vh;
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+}
+
+.text-container {
+    color: rgb(17, 17, 217);
+    padding-top: 15rem;
+    padding-left: 10rem;
+}

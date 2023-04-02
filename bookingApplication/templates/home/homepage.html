@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block css %}
+    <link rel="stylesheet" href="{% static 'css/homepage.css' %}">
+{% endblock css %}
+{% block content %}
+    <section id="hero" style="background-image:url({% static 'images/4.png' %})">
+        <div class="text-container">
+            <h2>Buy, Sell, Rent</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum, molestiae.</p>
+        </div>
+    </section>
+{% endblock content %}

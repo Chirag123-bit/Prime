@@ -8,3 +8,8 @@ def homepage(request):
 
 def aboutPage(request):
     return HttpResponse("About Page")
+
+
+
+def detailsPage(request):
+    return render(request,"home/detailsPage.html")

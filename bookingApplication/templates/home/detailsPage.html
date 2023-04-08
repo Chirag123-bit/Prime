@@ -1,0 +1,97 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block css %}
+    <link rel="stylesheet" href="{% static 'css/details.css' %}">
+{% endblock css %}
+{% block content %}
+    <div id="carouselExample" class="carousel slide">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="https://images.wallpaperscraft.com/image/single/astronaut_ring_neon_156673_1920x1080.jpg"
+                     class="d-block w-100"
+                     alt="...">
+            </div>
+            <div class="carousel-item">
+                <img src="https://wallpapers.com/images/featured/1080p-3qmj7oaige168170.jpg"
+                     class="d-block w-100"
+                     alt="...">
+            </div>
+            <div class="carousel-item">
+                <img src="https://www.hdwallpaper.nu/wp-content/uploads/2018/10/no_mans_sky-16.png"
+                     class="d-block w-100"
+                     alt="...">
+            </div>
+        </div>
+        <button class="carousel-control-prev"
+                type="button"
+                data-bs-target="#carouselExample"
+                data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next"
+                type="button"
+                data-bs-target="#carouselExample"
+                data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+    <section id="info" class="d-flex justify-content-around align-items-center">
+        <div class="left-section">
+            <div class="top-section d-flex align-items-center justify-content-between">
+                <div class="top-left-section">
+                    <h3>Hyatt Residence</h3>
+                    <h5>Deluxe Room</h5>
+                </div>
+                <div class="top-right-section">
+                    <h5>Rs. 50000</h5>
+                </div>
+            </div>
+            <div class="mid-section p-3 d-flex justify-content-between border border-2 border-dark">
+                <div class="feature">
+                    <i class="fa-solid fa-wifi"></i>
+                    <h6>Free Wifi</h6>
+                </div>
+                <div class="feature">
+                    <i class="fa-solid fa-shower"></i>
+                    <h6>Water Facilities</h6>
+                </div>
+                <div class="feature">
+                    <i class="fa-solid fa-car"></i>
+                    <h6>Airport Pickup/ Drop</h6>
+                </div>
+                <div class="feature">
+                    <i class="fa-solid fa-phone"></i>
+                    <h6>24/7 Service</h6>
+                </div>
+                <div class="feature">
+                    <i class="fa-solid fa-bell"></i>
+                    <h6>Consilerage</h6>
+                </div>
+            </div>
+            <div class="bottom-section">
+                <p id="details-para">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum, omnis quia. Nobis aut perferendis facere animi modi, quas debitis veniam. Optio magni nulla aspernatur eius veritatis dolore expedita molestiae, quis repudiandae repellat nobis esse doloremque corrupti necessitatibus in totam ratione recusandae at. Ipsum odio fuga quasi illo assumenda eius quidem distinctio, nesciunt architecto magni enim quis autem consequuntur, cupiditate earum vel facilis nemo. Numquam quibusdam alias quos necessitatibus fuga! Error, repudiandae eius atque minima explicabo numquam earum exercitationem, dolorem similique fugiat accusamus quam maiores cumque nemo laboriosam provident eligendi sit doloribus. Nesciunt id voluptatibus corrupti! Maxime amet similique sint quas minima veritatis neque, excepturi ipsa vero perferendis? Harum impedit sit quaerat voluptas molestias quo nisi unde consequuntur nihil qui hic obcaecati fuga recusandae sed enim explicabo quasi magnam at mollitia sequi dolorem corrupti, laboriosam voluptatum. Dolorem, accusantium facere, vitae magni molestiae repudiandae numquam voluptate tempora esse eos perspiciatis voluptas repellat ex ea recusandae? Ea unde eum maxime et quibusdam amet exercitationem optio aut nisi nihil expedita, error esse quam iusto temporibus nostrum earum consectetur blanditiis cupiditate perspiciatis sequi? Architecto delectus qui, dicta libero excepturi quo amet aliquam ratione recusandae molestias blanditiis nostrum! Voluptate inventore dolorum molestias suscipit, officiis quo sit.
+                </p>
+            </div>
+        </div>
+        <div class="right-section border border-2 border-warning">
+            <img src="https://1000logos.net/wp-content/uploads/2020/10/Hyatt-Regency-Logo.png"
+                 class="img-fluid">
+            <form method="post">
+                <div class="input-part">
+                    <label for="checkin">Check In</label>
+                    <input type="date" name="checkin" id="checkin">
+                </div>
+                <div class="input-part">
+                    <label for="checkout">Check Out</label>
+                    <input type="date" name="checkout" id="checkout">
+                </div>
+            </form>
+            <div class="text-center mb-2">
+                <button class="btn btn-warning btn-md">Book Now</button>
+            </div>
+        </div>
+    </section>
+{% endblock content %}

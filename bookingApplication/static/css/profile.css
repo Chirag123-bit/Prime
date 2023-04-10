@@ -1,0 +1,24 @@
+#profile-Container {
+    /* height: 100vh; */
+    margin-top: 8rem;
+}
+
+#profile-content {
+    /* border: 1px solid red; */
+    width: 75%;
+    margin: auto;
+}
+
+.image-container {
+    max-width: 45%;
+}
+
+.text-group {
+    width: 100%;
+}
+
+#profile-main-content {
+    margin-top: 1rem;
+    border-radius: 1rem;
+    border: 1px solid orange;
+}

@@ -22,6 +22,40 @@
                     <a class="nav-link" href="#">About</a>
                 </li>
             </ul>
+            {% if user.is_authenticated %}
+                <div class="dropdown">
+                    <button class="btn  dropdown-toggle"
+                            type="button"
+                            data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                        <img src="{{ user.profile.profile_pic.url }}"
+                             alt="my Pic"
+                             class="img-fluid"
+                             style="width:2rem">
+                        {{ user.username }}
+                    </button>
+                    <ul class="dropdown-menu">
+                        <li>
+                            <a class="dropdown-item" href="/user/profile">My Profile</a>
+                        </li>
+                        <li>
+                            <a class="dropdown-item" href="/user/bookings">My Bookings</a>
+                        </li>
+                        <li>
+                            <a class="dropdown-item" href="/user/logout">Logout</a>
+                        </li>
+                    </ul>
+                </div>
+            {% else %}
+                <ul class="navbar-nav me-auto">
+                    <a href="/user/login" class="me-2">
+                        <button class="btn btn-outline-warning">Login</button>
+                    </a>
+                    <a href="/user/register">
+                        <button class="btn btn-success">Register</button>
+                    </a>
+                </ul>
+            {% endif %}
         </div>
     </div>
 </nav>

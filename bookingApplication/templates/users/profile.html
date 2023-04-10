@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% block css %}
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/profile.css' %}">
+{% endblock css %}
+{% block content %}
+    <section id="profile-Container">
+        <div id="profile-content">
+            <div class="top-content d-flex justify-content-between">
+                <h3>Profile Details</h3>
+                <div class="btn btn-md btn-warning">Edit Details</div>
+            </div>
+            <div id="profile-main-content" class="d-flex align-items-center">
+                <div class="image-container">
+                    <img src="{{ user.profile.profile_pic.url }}" alt="User" class="img-fluid">
+                </div>
+                <div class="text-content w-50">
+                    <div class="text-group d-flex justify-content-between">
+                        <h4>First Name</h4>
+                        <h4 class="text-info">{{ user.first_name }}</h4>
+                    </div>
+                    <div class="text-group d-flex justify-content-between">
+                        <h4>Last Name</h4>
+                        <h4 class="text-info">{{ user.first_name }}</h4>
+                    </div>
+                    <div class="text-group d-flex justify-content-between">
+                        <h4>Username</h4>
+                        <h4 class="text-info">{{ user.username }}</h4>
+                    </div>
+                    <div class="text-group d-flex justify-content-between">
+                        <h4>Email Address</h4>
+                        <h4 class="text-info">{{ user.email }}</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock content %}

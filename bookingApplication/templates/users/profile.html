@@ -8,10 +8,12 @@
         <div id="profile-content">
             <div class="top-content d-flex justify-content-between">
                 <h3>Profile Details</h3>
-                <div class="btn btn-md btn-warning">Edit Details</div>
+                <div class="btn btn-md btn-warning"
+                     data-bs-toggle="modal"
+                     data-bs-target="#exampleModal">Edit Details</div>
             </div>
             <div id="profile-main-content" class="d-flex align-items-center">
-                <div class="image-container">
+                <div class="image-container" style="max-width: 30%;">
                     <img src="{{ user.profile.profile_pic.url }}" alt="User" class="img-fluid">
                 </div>
                 <div class="text-content w-50">
@@ -21,7 +23,7 @@
                     </div>
                     <div class="text-group d-flex justify-content-between">
                         <h4>Last Name</h4>
-                        <h4 class="text-info">{{ user.first_name }}</h4>
+                        <h4 class="text-info">{{ user.last_name }}</h4>
                     </div>
                     <div class="text-group d-flex justify-content-between">
                         <h4>Username</h4>
@@ -35,4 +37,33 @@
             </div>
         </div>
     </section>
+    <!-- Modal -->
+    <div class="modal fade"
+         id="exampleModal"
+         tabindex="-1"
+         aria-labelledby="exampleModalLabel"
+         aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+                    <button type="button"
+                            class="btn-close"
+                            data-bs-dismiss="modal"
+                            aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form method="post">
+                        {% csrf_token %}
+                        {{ u_form }}
+                        {{ p_form }}
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                            <button type="submit" class="btn btn-primary">Update</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
 {% endblock content %}

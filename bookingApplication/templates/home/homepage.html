@@ -16,56 +16,22 @@
                 <span >Featured</span> Accomodations
             </h2>
             <div class="accomodation-cards d-flex justify-content-around">
-                <div class="ac-card">
-                    <div class="c-header">
-                        <img src="{% static 'images/1.png' %}" alt="Home One" class="img-fluid">
+                {% for i in featured %}
+                    <div class="ac-card">
+                        <div class="c-header">
+                            <img src={{ i.image1.url }} alt="Home One" class="img-fluid">
+                        </div>
+                        <div class="c-body">
+                            <h4>{{ i.hotel.city }}, {{ i.hotel.country }}</h4>
+                            <h6>Rs. {{ i.price }}</h6>
+                        </div>
+                        <div class="c-footer text-center">
+                            <a href="/details/{{ i.id }}">
+                                <div class="btn btn-warning text-ceter btn-md w-50">View Details</div>
+                            </a>
+                        </div>
                     </div>
-                    <div class="c-body">
-                        <h4>Kathmandu, Nepal</h4>
-                        <h6>Rs. 50,0000</h6>
-                    </div>
-                    <div class="c-footer text-center">
-                        <a href="/details">
-                            <div class="btn btn-warning text-ceter btn-md w-50">View Details</div>
-                        </a>
-                    </div>
-                </div>
-                <div class="ac-card">
-                    <div class="c-header">
-                        <img src="{% static 'images/2.png' %}" alt="Home One" class="img-fluid">
-                    </div>
-                    <div class="c-body">
-                        <h4>Kathmandu, Nepal</h4>
-                        <h6>Rs. 50,0000</h6>
-                    </div>
-                    <div class="c-footer text-center">
-                        <div class="btn btn-warning text-ceter btn-md w-50">View Details</div>
-                    </div>
-                </div>
-                <div class="ac-card">
-                    <div class="c-header">
-                        <img src="{% static 'images/3.png' %}" alt="Home One" class="img-fluid">
-                    </div>
-                    <div class="c-body">
-                        <h4>Kathmandu, Nepal</h4>
-                        <h6>Rs. 50,0000</h6>
-                    </div>
-                    <div class="c-footer text-center">
-                        <div class="btn btn-warning text-ceter btn-md w-50">View Details</div>
-                    </div>
-                </div>
-                <div class="ac-card">
-                    <div class="c-header">
-                        <img src="{% static 'images/5.png' %}" alt="Home One" class="img-fluid">
-                    </div>
-                    <div class="c-body">
-                        <h4>Kathmandu, Nepal</h4>
-                        <h6>Rs. 50,0000</h6>
-                    </div>
-                    <div class="c-footer text-center">
-                        <div class="btn btn-warning text-ceter btn-md w-50">View Details</div>
-                    </div>
-                </div>
+                {% endfor %}
             </div>
         </div>
     </section>

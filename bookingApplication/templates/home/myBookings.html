@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block css %}
+    <link rel="stylesheet" href="{% static 'css/homepage.css' %}">
+{% endblock css %}
+{% block content %}
+    <section id="featured">
+        <div class="featured-container">
+            <h2 class="underlined-text">
+                <span >Booked</span> Accomodations
+            </h2>
+            <div class="accomodation-cards d-flex justify-content-around">
+                {% for i in bookings %}
+                    <div class="ac-card">
+                        <div class="c-header">
+                            <img src={{ i.accomodation.image1.url }} alt="Home One" class="img-fluid">
+                        </div>
+                        <div class="c-body">
+                            <h4>{{ i.accomodation.hotel.city }}, {{ i.accomodation.hotel.country }}</h4>
+                            <h6>Rs. {{ i.accomodation.price }}</h6>
+                        </div>
+                        <div class="c-footer text-center">
+                            <div class="btn btn-warning text-ceter btn-md w-50">{{ i.status }}</div>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+{% endblock content %}
